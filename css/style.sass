@@ -12,7 +12,7 @@
  *v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
  *html5doctor.com/html-5-reset-stylesheet/
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video
   margin: 0
   padding: 0
   border: 0
@@ -21,7 +21,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   vertical-align: baseline
   background: transparent
 
-article, aside, figure, footer, header, hgroup, nav, section
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary
   display: block
 
 nav ul
@@ -89,20 +89,20 @@ input, select
  *          Please refer to developer.yahoo.com/yui/fonts/ for font sizing percentages
  *
  *There are two custom edits:
- *   make the line-height relative and unit-less
- *   remove the pre,code styles as we use a recommendation from Eric Meyer instead
+   * remove arial, helvetica from explicit font stack
+   * we normalize monospace styles ourselves
 
+/* hack retained to preserve specificity
 body
-  font: 13px sans-serif
+  font: 13px/1.231 sans-serif
   *font-size: small
   *font: x-small
-  line-height: 1.22
 
 table
   font-size: inherit
   font: 100%
 
-select, input, textarea
+select, input, textarea, button
   font: 99% sans-serif
 
 /* normalize monospace sizing 
@@ -278,24 +278,15 @@ button
 .invisible
   visibility: hidden
 
-/* >> The Magnificent CLEARFIX <<
-
+/* >> The Magnificent CLEARFIX << j.mp/phayesclearfix
 .clearfix
+  zoom: 1
   &:after
     content: "."
     display: block
     height: 0
     clear: both
     visibility: hidden
-  display: inline-block
-
-* html .clearfix
-  height: 1%
-
-/* Hides from IE-mac \
-
-.clearfix
-  display: block
 
 /* Primary Styles
  * Author:
@@ -350,7 +341,8 @@ button
 /* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
  * Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/
 @media screen and (max-device-width: 480px)
-  /* Prevent iOS, WinMobile from adjusting font size
-  html
-    -webkit-text-size-adjust: none
-    -ms-text-size-adjust: none
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+   * j.mp/textsizeadjust
+   * html
+   *   -webkit-text-size-adjust: none
+   *   -ms-text-size-adjust: none
