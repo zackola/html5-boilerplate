@@ -93,7 +93,7 @@ input, select
  *   remove the pre,code styles as we use a recommendation from Eric Meyer instead
 
 body
-  font: 13px arial,helvetica,"Nimbus Sans L", "Bitstream Vera Sans", sans-serif
+  font: 13px sans-serif
   *font-size: small
   *font: x-small
   line-height: 1.22
@@ -103,7 +103,7 @@ table
   font: 100%
 
 select, input, textarea
-  font: 99% arial,helvetica,"Nimbus Sans L", "Bitstream Vera Sans", sans-serif
+  font: 99% sans-serif
 
 /* normalize monospace sizing 
  * meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
@@ -133,6 +133,8 @@ h1, h2, h3, h4, h5, h6
 
 html
   -webkit-font-smoothing: antialiased
+  /* always force a scrollbar in non-IE
+  overflow-y: scroll
 
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test
 
@@ -141,10 +143,10 @@ a
     outline: none
   &:active
     outline: none
-    color: #607890
-  color: #607890
+    color: #036
+  color: #036
   &:visited
-    color: #607890
+    color: #036
   &:hover
     color: #036
 
@@ -229,11 +231,6 @@ button
 
 a:link
   -webkit-tap-highlight-color: #FF5E99
-
-/* always force a scrollbar in non-IE
-
-html
-  overflow-y: scroll
 
 /* make buttons play nice in IE:
  * www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
