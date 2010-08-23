@@ -1,4 +1,19 @@
-###  HTML5 Boilerplate
+###  HTML5 Boilerplate \(SASS \/ HAML\)
+
+I've taken paulirish's
+[html5-boilerplate](http://github.com/paulirish/html5-boilerplate) and
+converted the css and html files into sass and haml.  The javascript
+here is included for convenience.
+
+If you're already using
+[compass](http://github.com/chriseppstein/compass) I highly recommend
+[sporkd's compass-html5-boilerplate](http://github.com/sporkd/compass-html5-boilerplate)
+
+If you're not already using
+[compass](http://github.com/chriseppstein/compass), give it a try!
+I'm  fond of the standalone installation myself...
+
+\-himmel
 
 ## CHANGELOG:
 
@@ -11,6 +26,14 @@ Copyright Paul Irish
 Dual licensed under MIT and GPL
 
 ## INSTALLATION:
+
+Use index.haml as your layout file
+
+Copy css\/handheld.sass css\/style.sass to your sass directory.
+
+Don't forget to copy over the js as well.
+
+You're good to go.
 
 This is a set of files that a front-end developer can use to get started on a website, with following included:
 
