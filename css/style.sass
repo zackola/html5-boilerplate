@@ -197,7 +197,9 @@ input
     vertical-align: text-bottom
   &[type="checkbox"]
     vertical-align: bottom
-    *vertical-align: baseline
+
+.ie7 input[type="checkbox"]
+  :vertical-align baseline
 
 .ie6 input
   vertical-align: text-bottom
