@@ -23,7 +23,17 @@ v0.9 -August 10th, 2010 - Initial release
 
 Copyright Paul Irish
 
-Dual licensed under MIT and GPL
+[The Unlicense](http://unlicense.org) (aka: public domain)
+Major components:
+* Modernizr: MIT/BSD license
+* jQuery: MIT/GPL license
+* DD_belatedPNG: MIT license
+* YUI Profiling: BSD license
+* HTML5Doctor CSS reset: Creative Commons 3.0 BY
+* CSS Reset Reloaded: Public Domain
+
+Everything else:
+* [The Unlicense](http://unlicense.org) (aka: public domain)
 
 ## INSTALLATION:
 
