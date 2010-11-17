@@ -97,7 +97,6 @@ input, select
 body
   font: 13px/1.231 sans-serif
   *font-size: small
-  *font: x-small
 
 select, input, textarea, button
   font: 99% sans-serif
@@ -105,9 +104,8 @@ select, input, textarea, button
 /* normalize monospace sizing 
  * meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 
-code, pre
-  font-family: "Courier New", monospace, serif
-  font-size: 1em
+code, pre, kbd, samp
+  font-family: monospace, serif
 
 /* 
  * minimal base styles
@@ -126,7 +124,6 @@ body, select, input, textarea
 
 h1, h2, h3, h4, h5, h6
   font-weight: bold
-  text-rendering: optimizeLegibility
 
 html
   /* always force a scrollbar in non-IE
@@ -135,14 +132,14 @@ html
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test
 
 a
+  color: #036
   &:hover
     outline: none
   &:active
     outline: none
-    color: #036
-  color: #036
+    color: #607890
   &:visited
-    color: #036
+    color: #607890
   &:hover
     color: #036
 
@@ -151,6 +148,10 @@ ul, ol
 
 ol
   list-style-type: decimal
+
+nav ul, nav li
+  margin: 0
+
 
 small
   font-size: 85%
@@ -188,11 +189,6 @@ pre
 textarea
   :overflow auto
 
-/* To make IE6/7 inherit the font styles from parent selectors
-input, textarea, select
-  font-family: inherit
-  font-weight: inherit
-
 /* thnx ivannikolic!
 .ie6 legend, .ie7 legend
   :margin-left -7px
@@ -229,12 +225,12 @@ button, input, select, textarea
 
 /* colors for form validity
 input, textarea
+  &:valid
   &:invalid
     :border-radius 1px
     :-moz-box-shadow 0px 0px 5px red
     :-webkit-box-shadow 0px 0px 5px red
     :box-shadow 0px 0px 5px red
-  &:valid
 
 .no-boxshadow input:invalid, .no-boxshadow textarea:invalid
   :background-color #f0dddd
@@ -305,61 +301,27 @@ button
 .invisible
   visibility: hidden
 
-/* >> The Magnificent CLEARFIX << j.mp/phayesclearfix
-/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page
+/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix
+
 .clearfix
   zoom: 1
-  &:after
+  &:before, &:after
     content: "\0020"
     display: block
     height: 0
-    clear: both
     visibility: hidden
-
+  &:after
+    clear: both
+    
+    
 /* Primary Styles
  * Author:
-
-/* 
- * print styles
- * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
-@media print
-  *
-    background: transparent !important
-    color: #444 !important
-    text-shadow: none
-  a
-    color: #444 !important
-    text-decoration: underline
-    &:visited
-      color: #444 !important
-      text-decoration: underline
-    &:after
-      content: " (" attr(href) ")"
-  abbr:after
-    content: " (" attr(title) ")"
-  /* Don't show links for images
-  .ir a:after
-    content: ""
-  pre, blockquote
-    border: 1px solid #999
-    page-break-inside: avoid
-  img, tr
-    page-break-inside: avoid
-  /* css-discuss.incutio.com/wiki/Printing_Tables
-  thead
-    display: table-header-group
-  @page
-    margin: 0.5cm
-
-  p, h2, h3
-    orphans: 3
-    widows: 3
-  h2, h3
-    page-break-after: avoid
 
 
 /*
  * Media queries for responsive design
+ * These follow after primary styles so they will successfully override. 
+ 
 
 @media all and (orientation:portrait)
   /* Style adjustments for portrait mode goes here
@@ -377,3 +339,42 @@ button
    * html
    *   -webkit-text-size-adjust: none
    *   -ms-text-size-adjust: none
+   
+
+/* 
+* print styles
+* inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
+
+@media print
+  *
+    background: transparent !important
+    color: #444 !important
+    text-shadow: none !important
+  a
+    color: #444 !important
+    text-decoration: underline
+    &:visited
+      color: #444 !important
+      text-decoration: underline
+    &:after
+      content: " (" attr(href) ")"
+  abbr:after
+    content: " (" attr(title) ")"
+  .ir a:after 
+    content: ""
+  pre, blockquote
+    border: 1px solid #999
+    page-break-inside: avoid
+  img, tr
+    page-break-inside: avoid
+  /* css-discuss.incutio.com/wiki/Printing_Tables  
+  thead
+    display: table-header-group
+  @page
+    margin: 0.5cm
+
+  p, h2, h3
+    orphans: 3
+    widows: 3
+  h2, h3
+    page-break-after: avoid
