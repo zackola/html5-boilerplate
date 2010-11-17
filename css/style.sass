@@ -187,11 +187,11 @@ pre
 /* thnx ivannikolic!
 /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
 textarea
-  :overflow auto
+  overflow: auto
 
 /* thnx ivannikolic!
 .ie6 legend, .ie7 legend
-  :margin-left -7px
+  margin-left: -7px
 
 /* align checkboxes, radios, text inputs with their label
  * by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css
@@ -203,7 +203,7 @@ input
     vertical-align: bottom
 
 .ie7 input[type="checkbox"]
-  :vertical-align baseline
+  vertical-align: baseline
 
 .ie6 input
   vertical-align: text-bottom
@@ -221,19 +221,19 @@ button
 
 /* webkit browsers add a 2px margin outside the chrome of form elements
 button, input, select, textarea
-  :margin 0
+  margin: 0
 
 /* colors for form validity
 input, textarea
   &:valid
   &:invalid
-    :border-radius 1px
-    :-moz-box-shadow 0px 0px 5px red
-    :-webkit-box-shadow 0px 0px 5px red
-    :box-shadow 0px 0px 5px red
+    border-radius: 1px
+    -moz-box-shadow: 0px 0px 5px red
+    -webkit-box-shadow: 0px 0px 5px red
+    box-shadow: 0px 0px 5px red
 
 .no-boxshadow input:invalid, .no-boxshadow textarea:invalid
-  :background-color #f0dddd
+  background-color: #f0dddd
 
 /* These selection declarations have to be separate.
  * No text-shadow: twitter.com/miketaylr/status/12228805301
@@ -342,8 +342,8 @@ button
    
 
 /* 
-* print styles
-* inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
+  * print styles
+  * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
 
 @media print
   *
